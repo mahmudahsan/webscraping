@@ -62,7 +62,7 @@ def check_cache(filename, cache_time):
     scraping_time = get_last_scraped_time(filename)
 
     # check caching duration 
-    if scraping_time > cache_time:
+    if scraping_time < 0 or scraping_time > cache_time:
         return True 
     
     return False 
